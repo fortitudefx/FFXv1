@@ -573,22 +573,3 @@ footer {
   }
 }
 
-/* BACK TO TOP */
-.back-to-top {
-  margin-top: 50px;
-  text-align: center;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.28em;
-  color: rgba(241,215,255,0.55);
-}
-
-.back-to-top a {
-  color: rgba(241,215,255,0.55);
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.back-to-top a:hover {
-  color: #ffffff;
-}
