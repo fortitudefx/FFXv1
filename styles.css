@@ -66,12 +66,6 @@ a {
   position: relative;
   overflow: hidden;
   border-bottom: 1px solid var(--border);
-  background:
-    linear-gradient(rgba(18, 0, 31, 0.58), rgba(18, 0, 31, 0.72)),
-    url("FFX---FB-banner_1.jpg");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
 }
 
 .hero::before {
