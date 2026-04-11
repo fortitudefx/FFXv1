@@ -573,3 +573,89 @@ footer {
   }
 }
 
+/* ===== ULTRA PREMIUM NAV ===== */
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(18, 0, 31, 0.75);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.nav-wrap {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  height: 80px;
+}
+
+.nav-brand a {
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.nav-center {
+  display: flex;
+  justify-content: center;
+  gap: 34px;
+}
+
+.nav-center a {
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(241,215,255,0.7);
+  position: relative;
+}
+
+.nav-center a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: white;
+  transform: scaleX(0);
+  transition: 0.25s;
+}
+
+.nav-center a:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-center a:hover {
+  color: white;
+}
+
+.nav-cta {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-btn {
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.nav-btn-primary {
+  background: white;
+  color: #220033;
+}
+
+.nav-btn-secondary {
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* fix hero overlap */
+.hero {
+  margin-top: 80px;
+}
