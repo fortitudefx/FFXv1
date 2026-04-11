@@ -314,7 +314,36 @@ a {
   padding: 26px;
   backdrop-filter: blur(12px);
 }
+/* ===== NEW: 2 LARGE BOX VERSION ===== */
 
+.position-grid-two {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.card-large {
+  padding: 34px;
+}
+
+.card-large h3 {
+  margin-top: 16px;
+  font-size: 42px;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.card-bullets {
+  margin: 26px 0 0;
+  padding-left: 22px;
+  color: var(--soft);
+  display: grid;
+  gap: 16px;
+  font-size: 20px;
+  line-height: 1.45;
+}
+
+.card-bullets li::marker {
+  color: var(--accent);
+}
 .card h3 {
   margin: 14px 0 0;
   font-size: 28px;
@@ -500,6 +529,10 @@ footer {
 
   .cta-actions {
     align-items: flex-start;
+  }
+
+  .position-grid-two {
+  grid-template-columns: 1fr;
   }
 }
 
