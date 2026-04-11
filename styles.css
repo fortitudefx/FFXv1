@@ -66,6 +66,11 @@ a {
   position: relative;
   overflow: hidden;
   border-bottom: 1px solid var(--border);
+
+  background: url("Futuristic glowing bull power.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .hero::before {
