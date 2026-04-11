@@ -68,8 +68,8 @@ a {
   border-bottom: 1px solid var(--border);
 
   background: url("Futuristic glowing bull power.png");
-  background-size: cover;
-  background-position: center;
+  background-size: contain;
+  background-position: right;
   background-repeat: no-repeat;
 }
 
