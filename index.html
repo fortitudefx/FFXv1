@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FortitudeFX | Master the Catch the Wick Strategy</title>
+  <meta
+    name="description"
+    content="FortitudeFX is a premium trading education brand built around clarity, discipline, and a repeatable two-candle framework."
+  />
+  <meta name="theme-color" content="#12001f" />
+  <style>
+    :root {
+      --bg: #12001f;
+      --bg-2: #180022;
+      --bg-3: #250038;
+      --bg-4: #3a005a;
+      --text: #ffffff;
+      --muted: rgba(255, 255, 255, 0.72);
+      --soft: rgba(255, 255, 255, 0.58);
+      --border: rgba(255, 255, 255, 0.1);
+      --panel: rgba(255, 255, 255, 0.05);
+      --panel-2: rgba(255, 255, 255, 0.08);
+      --accent: #c86bff;
+      --accent-2: #9a4dff;
+      --accent-3: #f1d7ff;
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --max: 1240px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(181, 86, 255, 0.22), transparent 28%),
+        linear-gradient(135deg, var(--bg-2) 0%, var(--bg-3) 45%, var(--bg-4) 100%);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 84px 0;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: rgba(241, 215, 255, 0.72);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.18;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -120px;
+      top: 40px;
+      width: 360px;
+      height: 360px;
+      background: rgba(200, 107, 255, 0.22);
+      filter: blur(80px);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-wrap {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 48px;
+      align-items: center;
+      min-height: 92vh;
+      padding: 56px 0 72px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      border: 1px solid rgba(200, 107, 255, 0.22);
+      background: rgba(255,255,255,0.05);
+      border-radius: 999px;
+      backdrop-filter: blur(10px);
+      color: rgba(241, 215, 255, 0.9);
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      max-width: 720px;
+      font-size: clamp(48px, 7vw, 82px);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+    }
+
+    .gradient-text {
+      display: block;
+      background: linear-gradient(90deg, #ffffff 0%, #f2dfff 50%, #a96cff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      margin: 22px 0 0;
+      max-width: 620px;
+      font-size: clamp(18px, 2vw, 22px);
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 24px;
+      border-radius: 18px;
+      font-weight: 700;
+      font-size: 15px;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: #ffffff;
+      color: #220033;
+      box-shadow: 0 18px 40px rgba(86, 14, 120, 0.28);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.05);
+      color: #ffffff;
+      border-color: rgba(255,255,255,0.16);
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      margin-top: 28px;
+      color: rgba(255,255,255,0.6);
+      font-size: 14px;
+    }
+
+    .panel-shell {
+      position: relative;
+      width: 100%;
+      max-width: 540px;
+      margin-left: auto;
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(18px);
+      box-shadow: var(--shadow);
+    }
+
+    .panel {
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+      padding: 28px;
+    }
+
+    .panel-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+
+    .panel-brand small {
+      display: block;
+      font-size: 12px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.42);
+      margin-bottom: 10px;
+    }
+
+    .panel-brand strong {
+      font-size: 34px;
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .badge {
+      border: 1px solid rgba(200, 107, 255, 0.28);
+      color: rgba(241, 215, 255, 0.92);
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .benefit-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .benefit-item {
+      border: 1px solid var(--border);
+      background: rgba(0,0,0,0.18);
+      border-radius: 18px;
+      padding: 16px 18px;
+      color: rgba(255,255,255,0.82);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .mini-card {
+      border: 1px solid var(--border);
+      background: rgba(200, 107, 255, 0.08);
+      border-radius: 16px;
+      padding: 16px 10px;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.92);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .section-head h2 {
+      margin: 12px 0 0;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .section-head p {
+      max-width: 560px;
+      margin: 0;
+      color: var(--soft);
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    .position-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.05);
+      border-radius: var(--radius-lg);
+      padding: 26px;
+      backdrop-filter: blur(12px);
+    }
+
+    .card h3 {
+      margin: 14px 0 0;
+      font-size: 28px;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+
+    .card p {
+      margin: 14px 0 0;
+      color: var(--soft);
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    .card .tiny {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      color: rgba(241,215,255,0.55);
+    }
+
+    .soft-strip {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .vip-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .vip-card {
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+      transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+    }
+
+    .vip-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(200, 107, 255, 0.34);
+      background: rgba(255,255,255,0.1);
+    }
+
+    .vip-number {
+      width: 40px;
+      height: 40px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(200,107,255,0.14);
+      color: rgba(241, 215, 255, 0.95);
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .vip-card h3 {
+      margin: 18px 0 0;
+      font-size: 24px;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+    }
+
+    .vip-card p {
+      margin: 12px 0 0;
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--soft);
+    }
+
+    .bootcamp-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .week-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,0.05);
+      padding: 28px;
+    }
+
+    .week-card .week {
+      font-size: 12px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: rgba(241,215,255,0.6);
+    }
+
+    .week-card h3 {
+      margin: 12px 0 0;
+      font-size: 30px;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    .week-list {
+      margin: 22px 0 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .week-list div {
+      border: 1px solid var(--border);
+      background: rgba(0,0,0,0.12);
+      border-radius: 14px;
+      padding: 12px 14px;
+      color: rgba(255,255,255,0.78);
+      font-size: 14px;
+    }
+
+    .cta-shell {
+      border: 1px solid rgba(200, 107, 255, 0.18);
+      border-radius: var(--radius-xl);
+      padding: 34px;
+      background:
+        radial-gradient(circle at top, rgba(183,114,255,0.18), transparent 45%),
+        linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+    }
+
+    .cta-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 30px;
+      align-items: end;
+    }
+
+    .cta-grid h2 {
+      margin: 14px 0 0;
+      font-size: clamp(34px, 5vw, 56px);
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .cta-grid p {
+      margin: 16px 0 0;
+      max-width: 700px;
+      color: var(--soft);
+      line-height: 1.8;
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 14px;
+    }
+
+    footer {
+      padding: 20px 0 44px;
+      color: rgba(255,255,255,0.44);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    @media (max-width: 1100px) {
+      .hero-wrap,
+      .cta-grid,
+      .section-head {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-wrap {
+        min-height: auto;
+        padding: 72px 0;
+      }
+
+      .panel-shell {
+        margin: 0;
+        max-width: 100%;
+      }
+
+      .position-grid,
+      .vip-grid,
+      .bootcamp-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .cta-actions {
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .container {
+        width: min(var(--max), calc(100% - 24px));
+      }
+
+      .section {
+        padding: 66px 0;
+      }
+
+      .position-grid,
+      .vip-grid,
+      .bootcamp-grid,
+      .mini-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-tags {
+        gap: 12px;
+        flex-direction: column;
+      }
+
+      .panel,
+      .card,
+      .week-card,
+      .cta-shell {
+        padding: 22px;
+      }
+
+      .hero-wrap {
+        gap: 28px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container hero-wrap">
+      <div>
+        <div class="pill">FFX · Mechanical Edge. Deep Trust. No Hype.</div>
+        <h1>
+          Master the
+          <span class="gradient-text">Catch the Wick</span>
+          strategy with structure.
+        </h1>
+        <p>
+          A premium FortitudeFX landing page built around clarity, discipline,
+          and a purple luxury-fintech identity. Teach the framework. Build the
+          skill. Trade with rules.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#">Join VIP Discord</a>
+          <a class="btn btn-secondary" href="#">View Bootcamp</a>
+        </div>
+
+        <div class="hero-tags">
+          <span>2-candle framework</span>
+          <span>Rules-based entries</span>
+          <span>Live mentorship</span>
+        </div>
+      </div>
+
+      <div class="panel-shell">
+        <div class="panel">
+          <div class="panel-top">
+            <div class="panel-brand">
+              <small>FortitudeFX</small>
+              <strong>FFX</strong>
+            </div>
+            <div class="badge">Premium Concept A</div>
+          </div>
+
+          <div class="benefit-list">
+            <div class="benefit-item">Mechanical edge built around a repeatable two-candle framework</div>
+            <div class="benefit-item">Structured mentorship focused on execution, discipline, and review</div>
+            <div class="benefit-item">VIP Discord with daily markups, recap videos, and live sessions</div>
+            <div class="benefit-item">Designed for traders who want skill, process, and long-term consistency</div>
+          </div>
+
+          <div class="mini-grid">
+            <div class="mini-card">Deep Trust</div>
+            <div class="mini-card">Precision Entries</div>
+            <div class="mini-card">Repeatable Skill</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Positioning</span>
+          <h2>From stuck to structured.</h2>
+        </div>
+        <p>
+          This version uses fewer graphics, more breathing room, stronger
+          hierarchy, and premium spacing to feel like a serious fintech brand
+          rather than a slide deck.
+        </p>
+      </div>
+
+      <div class="position-grid">
+        <article class="card">
+          <div class="tiny">FFX</div>
+          <h3>Why traders stay stuck</h3>
+          <p>Strategy hopping, emotional decisions, and no clear framework.</p>
+        </article>
+
+        <article class="card">
+          <div class="tiny">FFX</div>
+          <h3>The FortitudeFX shift</h3>
+          <p>Process over outcome, rules over impulses, structure over noise.</p>
+        </article>
+
+        <article class="card">
+          <div class="tiny">FFX</div>
+          <h3>Mechanical edge</h3>
+          <p>No indicator clutter. Just a repeatable framework and disciplined execution.</p>
+        </article>
+
+        <article class="card">
+          <div class="tiny">FFX</div>
+          <h3>Skills that last</h3>
+          <p>Build pattern recognition, decision quality, and a durable trading process.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section soft-strip">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">VIP Discord</span>
+          <h2>Inside the FortitudeFX community</h2>
+        </div>
+        <p>
+          A cleaner grid presentation of your VIP offer stack, translated into a
+          more elegant premium web layout.
+        </p>
+      </div>
+
+      <div class="vip-grid">
+        <article class="vip-card">
+          <div class="vip-number">1</div>
+          <h3>Daily Trade Recap Videos</h3>
+          <p>Premium education and community feature block.</p>
+        </article>
+
+        <article class="vip-card">
+          <div class="vip-number">2</div>
+          <h3>Weekly Live Trading</h3>
+          <p>Premium education and community feature block.</p>
+        </article>
+
+        <article class="vip-card">
+          <div class="vip-number">3</div>
+          <h3>Daily Chart Markups</h3>
+          <p>Premium education and community feature block.</p>
+        </article>
+
+        <article class="vip-card">
+          <div class="vip-number">4</div>
+          <h3>Weekly FFX Community Call</h3>
+          <p>Premium education and community feature block.</p>
+        </article>
+
+        <article class="vip-card">
+          <div class="vip-number">5</div>
+          <h3>Monthly Virtual Coffee Chat</h3>
+          <p>Premium education and community feature block.</p>
+        </article>
+
+        <article class="vip-card">
+          <div class="vip-number">6</div>
+          <h3>1:1 Private Session</h3>
+          <p>Premium education and community feature block.</p>
+        </article>
+
+        <article class="vip-card">
+          <div class="vip-number">7</div>
+          <h3>FortitudeFX Mindset</h3>
+          <p>Premium education and community feature block.</p>
+        </article>
+
+        <article class="vip-card">
+          <div class="vip-number">8</div>
+          <h3>Rules-Based Strategy Entries</h3>
+          <p>Premium education and community feature block.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Bootcamp</span>
+          <h2>A structured journey, not random content.</h2>
+        </div>
+      </div>
+
+      <div class="bootcamp-grid">
+        <article class="week-card">
+          <div class="week">Week 01</div>
+          <h3>Foundation & Framework</h3>
+          <div class="week-list">
+            <div>Market structure</div>
+            <div>Supply & demand</div>
+            <div>Liquidity basics</div>
+            <div>Multi-timeframe understanding</div>
+          </div>
+        </article>
+
+        <article class="week-card">
+          <div class="week">Week 02</div>
+          <h3>Entries & Trade Management</h3>
+          <div class="week-list">
+            <div>Mechanical entry models</div>
+            <div>Risk management</div>
+            <div>Break-even rules</div>
+            <div>Putting it all together</div>
+          </div>
+        </article>
+
+        <article class="week-card">
+          <div class="week">Week 03</div>
+          <h3>Execution, Review & Graduation</h3>
+          <div class="week-list">
+            <div>Trade review</div>
+            <div>Examples</div>
+            <div>Q&A</div>
+            <div>Certification & next steps</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta-shell">
+        <div class="cta-grid">
+          <div>
+            <span class="eyebrow">Call to action</span>
+            <h2>Choose your trading edge.</h2>
+            <p>
+              This premium direction is designed to make FortitudeFX feel
+              cleaner, more expensive, and more trustworthy at first glance,
+              while staying scalable for future pages, videos, and content.
+            </p>
+          </div>
+
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="#">Join VIP</a>
+            <a class="btn btn-secondary" href="#">Apply for Bootcamp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">© 2026 FortitudeFX. All rights reserved.</div>
+  </footer>
+</body>
+</html>
