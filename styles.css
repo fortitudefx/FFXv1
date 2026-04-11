@@ -1,1 +1,79 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+/* BODY */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #0b0014;
+  color: white;
+}
+
+/* HERO SECTION */
+.hero {
+  height: 100vh;
+
+  /* CURRENT BASE (we will upgrade this next step with your bull image) */
+  background: linear-gradient(135deg, #1a0033, #3d0070);
+
+  display: flex;
+  align-items: center;
+  padding: 0 8%;
+}
+
+/* HERO CONTENT */
+.hero-content {
+  max-width: 600px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #ccc;
+}
+
+/* BUTTONS */
+.cta-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.primary {
+  background: #7b2cff;
+  color: white;
+}
+
+.secondary {
+  border: 1px solid #7b2cff;
+  color: #7b2cff;
+}
+
+/* GENERIC SECTION */
+.section {
+  padding: 80px 8%;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.section p {
+  color: #bbb;
+}
