@@ -69,7 +69,7 @@ a {
 
   background: url("Futuristic glowing bull power.png");
   background-size: contain;
-  background-position: right;
+  background-position: 120% center;
   background-repeat: no-repeat;
 }
 
