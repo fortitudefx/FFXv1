@@ -802,3 +802,274 @@ footer {
     padding-bottom: 20px;
   }
 }
+
+/* ========================= */
+/* BOOTCAMP PAGE ONLY STYLES */
+/* ========================= */
+
+.bootcamp-page .hero {
+  background:
+    radial-gradient(circle at 78% 22%, rgba(200, 107, 255, 0.20), transparent 20%),
+    radial-gradient(circle at 88% 18%, rgba(255, 255, 255, 0.06), transparent 14%);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+}
+
+.bootcamp-page .hero::before {
+  opacity: 0.14;
+}
+
+.bootcamp-page .hero::after {
+  right: -140px;
+  top: 0;
+  width: 430px;
+  height: 430px;
+  background: rgba(200, 107, 255, 0.20);
+  filter: blur(90px);
+}
+
+.bootcamp-page .hero-wrap {
+  grid-template-columns: 1.05fr 0.95fr;
+  min-height: 88vh;
+  padding: 72px 0 82px;
+}
+
+.bootcamp-page .hero h1 {
+  max-width: 760px;
+}
+
+.bootcamp-page .hero-copy {
+  max-width: 640px;
+}
+
+.bootcamp-page .hero-tags span {
+  padding: 10px 14px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+  border-radius: 999px;
+}
+
+.bootcamp-page .nav-center {
+  gap: 28px;
+}
+
+.bootcamp-page .bc-hero-panel {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 26px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(18px);
+  box-shadow: var(--shadow);
+}
+
+.bootcamp-page .bc-hero-panel-inner {
+  border: 1px solid var(--border);
+  border-radius: 26px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+  padding: 28px;
+}
+
+.bootcamp-page .bc-hero-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.bootcamp-page .bc-hero-top strong {
+  font-size: 28px;
+  letter-spacing: -0.04em;
+}
+
+.bootcamp-page .bc-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.bootcamp-page .bc-stat {
+  border: 1px solid var(--border);
+  background: rgba(0,0,0,0.18);
+  border-radius: 18px;
+  padding: 18px;
+}
+
+.bootcamp-page .bc-stat small {
+  display: block;
+  color: rgba(255,255,255,0.55);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  margin-bottom: 8px;
+}
+
+.bootcamp-page .bc-stat strong {
+  display: block;
+  font-size: 24px;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.bootcamp-page .bc-stat span {
+  display: block;
+  margin-top: 8px;
+  color: var(--soft);
+  font-size: 14px;
+}
+
+.bootcamp-page .bc-grid-2,
+.bootcamp-page .bc-grid-3,
+.bootcamp-page .bc-value-grid,
+.bootcamp-page .bc-fit-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.bootcamp-page .bc-grid-2 {
+  grid-template-columns: 1.05fr 0.95fr;
+}
+
+.bootcamp-page .bc-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.bootcamp-page .bc-value-grid,
+.bootcamp-page .bc-fit-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.bootcamp-page .bc-card {
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.05);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  backdrop-filter: blur(12px);
+}
+
+.bootcamp-page .bc-card h3 {
+  margin: 12px 0 0;
+  font-size: 30px;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+
+.bootcamp-page .bc-card p {
+  margin: 14px 0 0;
+  color: var(--soft);
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+.bootcamp-page .bc-list {
+  margin: 20px 0 0;
+  padding-left: 20px;
+  color: var(--soft);
+  display: grid;
+  gap: 12px;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.bootcamp-page .bc-list li::marker {
+  color: var(--accent);
+}
+
+.bootcamp-page .bc-cta-shell {
+  border: 1px solid rgba(200, 107, 255, 0.18);
+  border-radius: var(--radius-xl);
+  padding: 34px;
+  background:
+    radial-gradient(circle at top, rgba(183,114,255,0.18), transparent 45%),
+    linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+}
+
+.bootcamp-page .bc-cta-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 30px;
+  align-items: end;
+}
+
+.bootcamp-page .bc-cta-grid h2 {
+  margin: 14px 0 0;
+  font-size: clamp(34px, 5vw, 56px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.bootcamp-page .bc-cta-grid p {
+  margin: 16px 0 0;
+  max-width: 700px;
+  color: var(--soft);
+  line-height: 1.8;
+}
+
+.bootcamp-page .bc-cta-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 14px;
+}
+
+@media (max-width: 1100px) {
+  .bootcamp-page .hero-wrap,
+  .bootcamp-page .bc-grid-2,
+  .bootcamp-page .bc-grid-3,
+  .bootcamp-page .bc-value-grid,
+  .bootcamp-page .bc-fit-grid,
+  .bootcamp-page .bc-cta-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bootcamp-page .bc-cta-actions {
+    align-items: flex-start;
+  }
+
+  .bootcamp-page .bc-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .bootcamp-page .nav-wrap {
+    grid-template-columns: 1fr;
+    height: auto;
+    padding: 14px 0;
+    gap: 14px;
+  }
+
+  .bootcamp-page .nav-center,
+  .bootcamp-page .nav-cta,
+  .bootcamp-page .hero-actions,
+  .bootcamp-page .hero-tags {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .bootcamp-page .nav-center {
+    gap: 14px;
+  }
+
+  .bootcamp-page .hero {
+    margin-top: 132px;
+  }
+
+  .bootcamp-page .hero-tags {
+    gap: 10px;
+    flex-direction: column;
+  }
+
+  .bootcamp-page .bc-hero-panel,
+  .bootcamp-page .bc-hero-panel-inner,
+  .bootcamp-page .bc-card,
+  .bootcamp-page .bc-cta-shell {
+    padding: 22px;
+  }
+
+  .bootcamp-page .bc-stats {
+    grid-template-columns: 1fr;
+  }
+}
